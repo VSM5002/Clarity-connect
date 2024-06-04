@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Clarity Connect</title>
+        <link rel="stylesheet" href="style_main.css">
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <img src="logo.jpg" alt="Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="blog_main.html">Blog</a></li>
+                    <li><a href="blog.html">Courses</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="courses">
+                <div class="course-filter">
+                    <ul>
+                        <li class="active"><a href="#all" onclick="filterCourses('all')">All</a></li>
+                        <li><a href="#design" onclick="filterCourses('design')">Design</a></li>
+                        <li><a href="#web-development" onclick="filterCourses('web-development')">Web Development</a></li>
+                    </ul>
+                </div>
+                <p>"Kickstart your web development journey with our comprehensive courses in Bangalore. Join our community today to master the latest technologies, unleash your creativity, and build the digital future."</p>
+                <div class="course-cards">
+                    <div class="card" data-category="art">
+                        <img src="arts_craft.jpg" alt="Art & Crafts">
+                        <div class="card-content">
+                            <h3>Price: 3000 INR</h3>
+                        </div>
+                        <div class="card-description">
+                            <h4>Art & Crafts</h4>
+                            <p>"Explore a world of creativity and inspiration on our art and craft website, where imagination takes flight and every creation tells a unique story."</p>
+                            <p>120 Students</p>
+                        </div>
+                    </div>
+                    <div class="card" data-category="design">
+                        <img src="graphic_design.jpg" alt="Graphic Design">
+                        <div class="card-content">
+                            <h3>Price: 3000 INR</h3>
+                        </div>
+                        <div class="card-description">
+                            <h4>Graphic Design</h4>
+                            <p>"Become a part of our dynamic graphic design community, where creativity thrives, skills are honed, and innovative ideas come to life through collaborative learning."</p>
+                            <p>120 Students</p>
+                        </div>
+                    </div>
+                    <div class="card" data-category="web-development">
+                        <a href="home.html"><img src="bachelor's.jpg" alt="Bachelors"></a>
+                        <div class="card-content">
+                            <h3>Price: 3000 INR</h3>
+                        </div>
+                        <div class="card-description">
+                            <h4>Bachelors</h4>
+                            <p>"Unlock your potential with our exceptional learning programs for bachelors in Bangalore, featuring expert instructors and comprehensive courses designed to boost your career and personal growth."</p>
+                            <p>120 Students</p>
+                        </div>
+                    </div>
+                    <div class="card" data-category="design">
+                        <img src="social_media.jpg" alt="Social Media">
+                        <div class="card-content">
+                            <h3>Price: 4000 INR</h3>
+                        </div>
+                        <div class="card-description">
+                            <h4>Social Media</h4>
+                            <p>"Join our vibrant community of artists and crafters on social media, where every post is a brushstroke of creativity and every interaction sparks inspiration."</p>
+                            <p>120 Students</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <script>
+            function filterCourses(category) {
+                var cards = document.querySelectorAll('.card');
+                cards.forEach(function(card) {
+                    if (category === 'all') {
+                        card.style.display = 'block';
+                    } else {
+                        if (card.getAttribute('data-category') === category) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    }
+                });
+
+                var filterLinks = document.querySelectorAll('.course-filter ul li');
+                filterLinks.forEach(function(link) {
+                    link.classList.remove('active');
+                });
+                document.querySelector(`.course-filter ul li a[href="#${category}"]`).parentNode.classList.add('active');
+            }
+        </script>
+    </body>
+</html>

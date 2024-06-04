@@ -1,0 +1,112 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: lightblue;
+    color: black;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: black;
+    color: steelblue;
+}
+
+header .logo img {
+    height: 70px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: lightblue;
+    text-decoration: none;
+    font-size: 22px;
+}
+
+main {
+    padding: 20px;
+    background-color: black;
+    color: lightskyblue;
+}
+
+.courses {
+    text-align: center;
+}
+
+.course-filter ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.course-filter ul li {
+    margin: 0 10px;
+}
+
+.course-filter ul li a {
+    text-decoration: none;
+    color: lightskyblue;
+    font-size: 18px;
+}
+
+.course-filter ul li.active a {
+    color: blue;
+    font-weight: bold;
+}
+
+.course-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: black;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 22%;
+    margin: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+}
+
+.card-content {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.card-description {
+    padding: 15px;
+    text-align: center;
+}
+
+.card-description h4 {
+    margin: 10px 0;
+}
+
+.card-description p {
+    margin: 10px 0;
+    color: gray;
+}

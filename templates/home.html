@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bachelor Courses</title>
+    <link rel="stylesheet" href="style_home.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="blog_main.html"><img src="logo.jpg" alt="Logo"></a>
+        </div>
+        <h1 id="studentName">Student Learning App</h1>
+        <nav>
+            <ul>
+                <li><a href="blog_main.html">Home</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="/messages">Messages</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="courses">
+            <h2>Available Courses</h2>
+            <div class="course">
+                <h3>Data Structures & Algorithms</h3>
+                <p>An introduction to fundamental data structures and algorithms.</p>
+                <button onclick="enroll('Data Structures & Algorithms')">Enroll</button>
+            </div>
+            <div class="course">
+                <h3>Building Applications with Python</h3>
+                <p>Learn to build web applications, data analysis tools, and more using Python.</p>
+                <button onclick="enroll('Building Applications with Python')">Enroll</button>
+            </div>
+            <div class="course">
+                <h3>Linear Algebra</h3>
+                <p>Explore the concepts of linear algebra and their applications.</p>
+                <button onclick="enroll('Linear Algebra')">Enroll</button>
+            </div>
+            <div class="course">
+                <h3>Embedded Systems</h3>
+                <p>Learn about embedded systems design, development, and programming.</p>
+                <button onclick="enroll('Embedded Systems')">Enroll</button>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 Student Learning App</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const studentName = localStorage.getItem('username');
+            if (studentName) {
+                document.getElementById('studentName').textContent = studentName;
+            } else {
+                window.location.href = 'login.html';
+            }
+        });
+
+        function enroll(courseName) {
+            let enrolledCourses = JSON.parse(localStorage.getItem('enrolledCourses')) || [];
+            if (!enrolledCourses.includes(courseName)) {
+                enrolledCourses.push(courseName);
+                localStorage.setItem('enrolledCourses', JSON.stringify(enrolledCourses));
+                alert(`You have successfully enrolled in ${courseName}`);
+            } else {
+                alert(`You are already enrolled in ${courseName}`);
+            }
+        }
+    </script>
+</body>
+</html>

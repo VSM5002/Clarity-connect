@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Sign-Up</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: url("logo1.jpg");
+      background-size: contain;
+    }
+    
+    .container {
+      width: 300px;
+      background-color: #ffffff9e;
+      padding: 20px;
+      box-shadow: 0px 0px 10px rgb(237, 101, 139);
+    }
+    .container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .txt_field {
+      width: 100%;
+      border-bottom: 2px solid #ccc;
+      margin-bottom: 20px;
+    }
+    
+    .txt_field label {
+      font-size: 16px;
+      color: black;
+      transform: translateY(20px);
+      transition: 0.3s ease;
+    }
+    .txt_field input {
+      border: none;
+      outline: none;
+      background: none;
+      width: 100%;
+      padding: 5px;
+      font-size: 16px;
+      color: #333;
+    }
+    .txt_field input:focus ~ label,
+    .txt_field input:valid ~ label {
+      transform: translateY(-15px);
+      color: #333;
+      font-size: 12px;
+    }
+    .btn {
+      width: 100%;
+      background-color: #2691d9;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .message {
+      text-align: center;
+      color: red;
+      margin-bottom: 10px;
+    }
+    .login-link {
+      text-align: center;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Sign Up</h2>
+    <form id="signupForm">
+      <div class="txt_field">
+        <label>Email</label>
+        <input type="email" name="username" id="username" required>
+      </div>
+      <div class="txt_field">
+        <label>Password</label>
+        <input type="password" name="password" id="password" required>
+      </div>
+      <div class="message" id="message"></div>
+      <input type="submit" value="Sign Up" class="btn">
+      <div class="login-link">
+        <a href="login.html">Already have an account? Log in</a>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('signupForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const email = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      const message = document.getElementById('message');
+
+      const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+      if (!email.match(emailPattern)) {
+        message.textContent = 'Please enter a valid email address';
+        return;
+      }
+
+      if (password.length < 8 || !/[A-Z]/.test(password) || !/[0-9]/.test(password)) {
+        message.textContent = 'Password must be at least 8 characters long, contain at least one uppercase letter and one number';
+        return;
+      }
+
+      localStorage.setItem('username', email);
+      localStorage.setItem('password', password);
+      alert('Registration successful! Redirecting to login page.');
+      window.location.href = 'login.html';
+    });
+  </script>
+</body>
+</html>

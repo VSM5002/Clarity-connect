@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>User Details</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: url("userdetailsbg.png");
+      background-size: cover;
+    }
+    .container {
+      width: 300px;
+      background-color: #ffffff8e;
+      padding: 20px;
+      box-shadow: 0px 0px 10px rgb(237, 101, 139);
+      display: flex;
+      justify-content: space-between;
+    }
+    .user-info {
+      margin-left: 20px;
+    }
+    .user-info h3 {
+      margin-top: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="user-info">
+      <h3>User Details</h3>
+      <p><strong>Username:</strong> {{ user[1] }}</p> <!-- Assuming user[1] is the username field -->
+    </div>
+  </div>
+</body>
+</html>

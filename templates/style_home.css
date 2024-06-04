@@ -1,0 +1,106 @@
+/* Common styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: black;
+    color: lightblue;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: lightblue;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: blue;
+}
+
+main {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 20px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+}
+
+.course {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    transition: box-shadow 0.3s ease;
+}
+
+.course h3 {
+    color: lightblue;
+    margin-bottom: 10px;
+}
+
+.course p {
+    color: #ccc;
+}
+
+.course button {
+    background-color: lightblue;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.course button:hover {
+    background-color: lightblue;
+}
+
+.course:hover {
+    box-shadow: 0 0 10px lightblue,
+                0 0 20px lightblue,
+                0 0 40px lightblue,
+                0 0 80px rgba(51, 195, 51, 0.333),
+                0 0 120px lightblue,
+                0 0 140px rgba(51, 195, 51, 0.333);
+    color: orange;
+}
+
+footer p {
+    margin-top: 20px;
+}
